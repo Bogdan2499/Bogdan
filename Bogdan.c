@@ -1,3 +1,4 @@
+   /////program for encrypting text with Vigenère cipher
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -32,8 +33,7 @@ int main(int argc, string argv[])
   printf("Try again.");
   return 1;
 }
-    // The letters in the keyword array should be converted to numbers
-    // starting from A = 0 to Z = 25 ignoring case.
+    ///text encryption
     for (int i = 0, n = 0; i < strlen(text); i++) 
 {
   // If input at given position is not letter, just mirror it.
