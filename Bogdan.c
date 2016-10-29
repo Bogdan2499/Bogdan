@@ -2,12 +2,17 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+
+char caesar(char token, int key);
+
 int main(int argc, string argv[])
 {
-if (argc != 2)
+  \\\The number of command line args submitted was incorrect.
+  if (argc != 2)
 {
-printf("Try again.");
-return 1;
+        \\\\We accept only letters as input.
+        printf("Try again.");
+        return 1;
 }
 string key = argv[1];
 unsigned long keyCount = strlen(key);
@@ -27,15 +32,17 @@ return 1;
 }
 for (int i = 0, n = 0; i < strlen(text); i++) 
 {
-if (isalpha(text[i])) 
-{
-if (isupper(text[i]))
-printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A'));
-if (islower(text[i]))
-printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a'));
-} else
-printf("%c", text[i]);
-}
-printf("\n");
-  return 0;
+  // If input at given position is not letter, just mirror it.
+  if (isalpha(text[i])) 
+  {
+  if (isupper(text[i]))
+  printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A'));
+  if (islower(text[i]))
+  printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a'));
+  } else
+  printf("%c", text[i]);
+  }
+     // Be a nice citizen and exit cleanly.
+     printf("\n");
+     return 0;
 }
