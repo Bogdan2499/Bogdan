@@ -19,18 +19,18 @@ int main(int argc, string argv[])
   unsigned long keyCount = strlen(key);
   for(int k = 0; k < keyCount; k++) 
 {
-if (!isalpha(key[k]))
+  if (!isalpha(key[k]))
 {
-printf("Try again.");
-return 1;
+  printf("Try again.");
+  return 1;
 }
 }
   // Read in user text and calculate its length. 
   string text = GetString();
   if(text == NULL) 
 {
-printf("Try again.");
-return 1;
+  printf("Try again.");
+  return 1;
 }
     // The letters in the keyword array should be converted to numbers
     // starting from A = 0 to Z = 25 ignoring case.
