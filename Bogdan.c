@@ -14,9 +14,10 @@ int main(int argc, string argv[])
         printf("Try again.");
         return 1;
 }
-string key = argv[1];
-unsigned long keyCount = strlen(key);
-for(int k = 0; k < keyCount; k++) 
+  // Increase the position counter for the keycode array.  
+  string key = argv[1];
+  unsigned long keyCount = strlen(key);
+  for(int k = 0; k < keyCount; k++) 
 {
 if (!isalpha(key[k]))
 {
@@ -24,13 +25,16 @@ printf("Try again.");
 return 1;
 }
 }
-string text = GetString();
-if(text == NULL) 
+  // Read in user text and calculate its length. 
+  string text = GetString();
+  if(text == NULL) 
 {
 printf("Try again.");
 return 1;
 }
-for (int i = 0, n = 0; i < strlen(text); i++) 
+    // The letters in the keyword array should be converted to numbers
+    // starting from A = 0 to Z = 25 ignoring case.
+    for (int i = 0, n = 0; i < strlen(text); i++) 
 {
   // If input at given position is not letter, just mirror it.
   if (isalpha(text[i])) 
@@ -46,3 +50,9 @@ for (int i = 0, n = 0; i < strlen(text); i++)
      printf("\n");
      return 0;
 }
+/*
+    This function applies a case-sensitive caeser cipher for a single
+    character using the supplied key.
+    Please note that it provides no input checking!
+    The caller is responsible for this task.
+*/    
