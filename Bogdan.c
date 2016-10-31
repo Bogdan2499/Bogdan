@@ -50,9 +50,3 @@ int main(int argc, string argv[])
      printf("\n");
      return 0;
 }
-/*
-    This function applies a case-sensitive caeser cipher for a single
-    character using the supplied key.
-    Please note that it provides no input checking!
-    The caller is responsible for this task.
-*/    
